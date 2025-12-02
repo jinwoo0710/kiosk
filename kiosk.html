@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키오스크 화면</title>
+    <link rel="stylesheet" href="kiosk.css">
+</head>
+<body>
+    <div class="title">
+        <h1>DIT 분식</h1>
+    </div>
+    <div class="container">
+        
+        <!-- 메뉴 박스 -->
+        <div class="menu-box" id="menu-box">
+            <div class="menu-boxtop">
+                <h2>메뉴</h2>
+                <div class="admin">
+                    <button class="admin-button">관리자 모드</button>
+                </div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item" draggable="true" data-name="떡볶이" data-price="3000">
+                    <img src="Image/Ejrqhrdl.jpg" alt="떡볶이" class="menu-image">
+                    <p>떡볶이</p> 
+                    <p>가격: 3000원</p>
+                </div>
+                <div class="menu-item" draggable="true" data-name="어묵" data-price="500">
+                    <img src="Image/djanr.jpg" alt="어묵" class="menu-image">
+                    <p>어묵</p>
+                    <p>가격: 500원</p>
+                </div>
+                <div class="menu-item" draggable="true" data-name="김밥" data-price="2000">
+                    <img src="Image/rlaqkq.jpg" alt="김밥" class="menu-image">
+                    <p>김밥</p>
+                    <p>가격: 2000원</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- 장바구니 박스 -->
+        <div class="cart-box" id="cart-box">
+            <h2>장바구니</h2>
+            <div id="cart-items">
+                <!-- 장바구니 항목이 여기에 추가됩니다. -->
+            </div>
+            <p class="cart-total-price">총가격:</p>
+            <button id="pay-btn">결제</button>
+        </div>
+    </div>
+
+    <!-- 영수증 페이지 -->
+    <div class="receipt-container" id="receipt-container">
+        <div class="receipt-box">
+            <h2>영수증</h2>
+            <div id="receipt-items">
+                <!-- 영수증 항목들이 여기에 추가됩니다. -->
+            </div>
+            <div id="total-price"></div>
+            <button class="close-btn" id="close-receipt">닫기</button>
+        </div>
+    </div>
+
+    <!-- 관리자 모드 페이지-->
+    <div class="admin-container" id="admin-container">
+        <div class="admin-box">
+            <h2>관리자 모드</h2>
+            <div class="admin-buttons">
+                <button id="menu-edit-button">메뉴 수정</button>
+                <button id="sale-place-button">판매 내역</button>
+            </div>
+            <button class="close-btn" id="close-admin">닫기</button>
+        </div>
+    </div>
+
+    <!-- 메뉴수정 페이지-->
+    <div class="menu-edit-container" id="menu-edit-container">
+        <div class="menu-edit-box">
+            <h2>메뉴 수정</h2>
+            <form id="menu-edit-form">
+                <input type="text" id="edit-menu-name" placeholder="메뉴명">
+                <input type="text" id="edit-menu-price" placeholder="가격">
+                <input type="text" id="edit-menu-picture" placeholder="사진파일주소">
+                <div class="menu-edit-buttons">
+                    <button class="menu-add-btn">추가</button>
+                    <button class="menu-rem-btn">삭제</button>
+                </div>
+            </form>
+            <button class="close-btn" id="close-menu-edit">닫기</button>
+        </div> 
+    </div>
+
+    <!-- 판매내역 페이지-->
+    <!-- 판매내역 페이지 -->
+    <div class="sale-place-container" style="display: none;">
+        <div class="sale-place-box">
+            <h2>판매내역</h2>
+            <div id="sale-history-container">
+                <!-- 결제된 주문 내역 테이블이 여기에 동적으로 추가됩니다 -->
+            </div>
+            <button class="close-btn" id="close-sale">닫기</button>
+            <button class="close-btn" id="delete-table">내역삭제</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="kiosk.js"></script>
+</body>
+</html>

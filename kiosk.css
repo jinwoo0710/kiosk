@@ -1,0 +1,332 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* 수직 정렬 */
+    align-items: center;    /* 수평 중앙 정렬 */
+    background-color: #f4f4f4;
+    height: 100vh;
+}
+
+.title {
+    text-align: center;
+    display: flex;
+}
+.title img{
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+}
+
+
+.menu-boxtop{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 5%;
+    max-width: 1200px;
+}
+
+h2 {
+    margin: 0;
+}
+
+.admin {
+    display: flex;
+    align-items: flex-start; /* 버튼이 상단에 위치하도록 설정 */
+}
+
+.admin-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menu-box{
+    width: 45%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+    height: 800px;
+}
+
+.menu-items{
+    height: 790px;
+    overflow: scroll;
+}
+
+.menu-item, .cart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu-item img, .cart-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.cart-box {
+    width: 45%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+    height: 800px;
+    border: 2px dashed #ccc;
+    min-height: 400px;
+    position: relative; /* 상대 위치 설정 */
+    text-align: center  ;
+}
+
+.cart-item-info {
+    display: flex;
+    align-items: center;
+}
+.quantity-container {
+    width:  100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+#cart-items {
+    margin-top: 20px;
+    height: 680px;
+    overflow: scroll;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item p {
+    margin: 0%;
+    text-align: center;
+}
+
+#pay-btn {
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    bottom: 20px; /* 아래쪽에서 20px 간격 */
+    left: 50%; /* 수평 중앙 */
+    transform: translateX(-50%); /* 수평 중앙 정렬 */
+    width: calc(100% - 40px); /* 좌우 패딩을 고려한 너비 */
+    max-width: 300px; /* 최대 너비 제한 */
+}
+
+.menu-name{
+    font-weight: bold;
+    width: 10%;
+    text-align: center;
+
+}
+
+.total-price {
+    width: 15%;
+    text-align: center;
+}
+
+.cart-item input[type="number"] {
+    text-align: center;
+    gap: inherit;
+    height: 15px;
+}
+
+button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e55347;
+}
+
+/* 영수증 스타일 */
+.receipt-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.receipt-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-top: 10%;
+    text-align: center;
+}
+
+#receipt-items {
+    width: 50%;
+    margin: auto;
+}
+
+.receipt-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.receipt-item p {
+    margin: auto ;
+    padding: 15px;
+}
+
+.close-btn {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.close-btn:hover {
+    background-color: #e55347;
+}
+
+.admin-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center; 
+}
+
+.admin-box {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-top: 20%;
+}
+
+.admin-buttons {
+    margin-top: 20px;
+}
+
+.menu-edit-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-edit-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-top: 10%;
+}
+
+#menu-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    margin-top: 10px;
+}
+
+.menu-edit-buttons {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-around;
+}
+
+.menu-edit-buttons button {
+    width: 45%;
+}
+
+.sale-place-container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sale-place-box{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-top: 10%;
+}
+
+.sale-history-container{
+    margin-top: 10px;
+    width: 50%;
+}
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
